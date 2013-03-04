@@ -1,6 +1,6 @@
 //
-//  UIBubbleTypingTableCell.m
-//  UIBubbleTableViewExample
+//  BTVBubbleTypingTableCell.m
+//  BTVBubbleTableViewExample
 //
 //  Created by Александр Баринов on 10/7/12.
 //  Copyright (c) 2012 Stex Group. All rights reserved.
@@ -38,7 +38,7 @@
     UIImage *bubbleImage = nil;
     CGFloat x = 0;
     
-    if (value == NSBubbleTypingTypeMe)
+    if (value == BTVBubbleTypingTypeMe)
     {
         bubbleImage = [UIImage imageNamed:@"typingMine.png"]; 
         x = self.frame.size.width - bubbleImage.size.width;

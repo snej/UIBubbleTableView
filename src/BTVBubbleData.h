@@ -1,5 +1,5 @@
 //
-//  NSBubbleData.h
+//  BTVBubbleData.h
 //
 //  Created by Alex Barinov
 //  Project home page: http://alexbarinov.github.com/UIBubbleTableView/

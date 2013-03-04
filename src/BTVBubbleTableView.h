@@ -1,5 +1,5 @@
 //
-//  UIBubbleTableView.h
+//  BTVBubbleTableView.h
 //
 //  Created by Alex Barinov
 //  Project home page: http://alexbarinov.github.com/UIBubbleTableView/
@@ -15,9 +15,9 @@
 
 typedef enum _BTVBubbleTypingType
 {
-    NSBubbleTypingTypeNobody = 0,
-    NSBubbleTypingTypeMe = 1,
-    NSBubbleTypingTypeSomebody = 2
+    BTVBubbleTypingTypeNobody = 0,
+    BTVBubbleTypingTypeMe = 1,
+    BTVBubbleTypingTypeSomebody = 2
 } BTVBubbleTypingType;
 
 @interface BTVBubbleTableView : UITableView <UITableViewDelegate, UITableViewDataSource>

@@ -1,5 +1,5 @@
 //
-//  NSBubbleData.m
+//  BTVBubbleData.m
 //
 //  Created by Alex Barinov
 //  Project home page: http://alexbarinov.github.com/UIBubbleTableView/
@@ -47,7 +47,7 @@ const UIEdgeInsets textInsetsSomeone = {5, 15, 11, 10};
 #if !__has_feature(objc_arc)
     return [[[BTVBubbleData alloc] initWithText:text date:date type:type] autorelease];
 #else
-    return [[NSBubbleData alloc] initWithText:text date:date type:type];
+    return [[BTVBubbleData alloc] initWithText:text date:date type:type];
 #endif    
 }
 
@@ -81,7 +81,7 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
 #if !__has_feature(objc_arc)
     return [[[BTVBubbleData alloc] initWithImage:image date:date type:type] autorelease];
 #else
-    return [[NSBubbleData alloc] initWithImage:image date:date type:type];
+    return [[BTVBubbleData alloc] initWithImage:image date:date type:type];
 #endif    
 }
 
@@ -115,7 +115,7 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
 #if !__has_feature(objc_arc)
     return [[[BTVBubbleData alloc] initWithView:view date:date type:type insets:insets] autorelease];
 #else
-    return [[NSBubbleData alloc] initWithView:view date:date type:type insets:insets];
+    return [[BTVBubbleData alloc] initWithView:view date:date type:type insets:insets];
 #endif    
 }
 

@@ -1,5 +1,5 @@
 //
-//  UIBubbleTableView.m
+//  BTVBubbleTableView.m
 //
 //  Created by Alex Barinov
 //  Project home page: http://alexbarinov.github.com/UIBubbleTableView/
@@ -40,10 +40,10 @@
     self.delegate = self;
     self.dataSource = self;
     
-    // UIBubbleTableView default properties
+    // BTVBubbleTableView default properties
     
     self.snapInterval = 120;
-    self.typingBubble = NSBubbleTypingTypeNobody;
+    self.typingBubble = BTVBubbleTypingTypeNobody;
 }
 
 - (id)init
@@ -171,7 +171,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     int result = [self.bubbleSection count];
-    if (self.typingBubble != NSBubbleTypingTypeNobody) result++;
+    if (self.typingBubble != BTVBubbleTypingTypeNobody) result++;
     return result;
 }
 
