@@ -56,15 +56,20 @@
 - (void) setupInternalData
 {
     self.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    if (!self.bubbleImage)
+
+    if (!self.data.hasBubble)
+    {
+        [self.bubbleImage removeFromSuperview];
+        self.bubbleImage = nil;
+    }
+    else if (!self.bubbleImage)
     {
 #if !__has_feature(objc_arc)
         self.bubbleImage = [[[UIImageView alloc] init] autorelease];
 #else
-        self.bubbleImage = [[UIImageView alloc] init];        
+        self.bubbleImage = [[UIImageView alloc] init];
 #endif
-        [self addSubview:self.bubbleImage];
+        [self insertSubview:self.bubbleImage atIndex: 0];
     }
     
     BTVBubbleType type = self.data.type;
@@ -94,6 +99,8 @@
         
         self.avatarImage.frame = CGRectMake(avatarX, avatarY, 50, 50);
         [self addSubview:self.avatarImage];
+
+        self.avatarImage.hidden = !self.data.hasBubble;
         
         CGFloat delta = self.frame.size.height - (self.data.insets.top + self.data.insets.bottom + self.data.view.frame.size.height);
         if (delta > 0) y = delta;
@@ -107,16 +114,18 @@
     self.customView.frame = CGRectMake(x + self.data.insets.left, y + self.data.insets.top, width, height);
     [self.contentView addSubview:self.customView];
 
-    if (type == BubbleTypeSomeoneElse)
-    {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
+    if (self.data.hasBubble) {
+        if (type == BubbleTypeSomeoneElse)
+        {
+            self.bubbleImage.image = [[UIImage imageNamed:@"bubbleSomeone.png"] stretchableImageWithLeftCapWidth:21 topCapHeight:14];
 
-    }
-    else {
-        self.bubbleImage.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
-    }
+        }
+        else {
+            self.bubbleImage.image = [[UIImage imageNamed:@"bubbleMine.png"] stretchableImageWithLeftCapWidth:15 topCapHeight:14];
+        }
 
-    self.bubbleImage.frame = CGRectMake(x, y, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
+        self.bubbleImage.frame = CGRectMake(x, y, width + self.data.insets.left + self.data.insets.right, height + self.data.insets.top + self.data.insets.bottom);
+    }
 }
 
 @end

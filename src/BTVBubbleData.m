@@ -20,6 +20,8 @@
 @synthesize view = _view;
 @synthesize insets = _insets;
 @synthesize avatar = _avatar;
+@synthesize hasBubble = _hasBackground;
+@synthesize hasAvatar = _hasAvatar;
 
 #pragma mark - Lifecycle
 
@@ -133,6 +135,8 @@ const UIEdgeInsets imageInsetsSomeone = {11, 18, 16, 14};
 #endif
         _type = type;
         _insets = insets;
+        _hasBackground = true;
+        _hasAvatar = true;
     }
     return self;
 }
