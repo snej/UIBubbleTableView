@@ -26,6 +26,7 @@
 
 - (void)setDate:(NSDate *)value
 {
+    _date = value;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
     [dateFormatter setTimeStyle:NSDateFormatterShortStyle];

@@ -27,6 +27,7 @@
 
 - (void)setType:(BTVBubbleTypingType)value
 {
+    _type = value;
     if (!self.typingImageView)
     {
         self.typingImageView = [[UIImageView alloc] init];
